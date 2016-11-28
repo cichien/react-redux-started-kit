@@ -5,7 +5,7 @@ import {
 } from '../actions/todo';
 
 const initialState = {
-  stauts: 'default',
+  status: 'default',
   data: [],
 };
 
