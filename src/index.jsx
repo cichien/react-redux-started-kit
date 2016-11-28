@@ -1,22 +1,21 @@
 import 'babel-polyfill';
+// import fetch from 'isomorphic-fetch';
+// import Promise from 'es6-promise';
+// Promise.polyfill();
 
 import React from 'react';
 import { render } from 'react-dom';
 import { Provider } from 'react-redux';
-import { Router, browserHistory } from 'react-router';
 
 import configureStore from './store';
-import getRoutes from './routers';
+import AppRouter from './AppRouter';
 
 const store = configureStore({});
-const routes = getRoutes();
 const reactElem = document.getElementById('app');
 
 render(
   <Provider store={store}>
-    <Router history={browserHistory}>
-      {routes}
-    </Router>
+    <AppRouter />
   </Provider>,
   reactElem
 );
