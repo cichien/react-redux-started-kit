@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import { Router, Route, IndexRoute, browserHistory } from 'react-router';
 
 import { fetchTodo } from './actions/todo';
-import TodosApp from './containers/TodosApp';
+import TodosApp from './components/TodosApp';
 import Todo from './containers/Todo';
 
 class AppRouter extends Component {

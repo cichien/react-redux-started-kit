@@ -1,18 +1,6 @@
-import React, { PropTypes } from 'react';
 import { connect } from 'react-redux';
 
-import TodoInput from '../../components/TodoInput';
-
-export const Todo = () => (
-  <TodoInput />
-);
-
-Todo.PropTypes = {
-  todo: PropTypes.shape({
-    status: PropTypes.string.isRequired,
-    data: PropTypes.array.isRequired,
-  }),
-};
+import Todo from '../../components/Todo';
 
 const mapStateToProps = state => ({
   todo: state.todo,
