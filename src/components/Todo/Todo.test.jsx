@@ -16,6 +16,9 @@ describe('Components: Todo', () => {
         status: 'default',
         data: [],
       },
+      actions: {
+        addTodo: () => {},
+      },
     };
 
     wrapper = mount(
@@ -25,7 +28,7 @@ describe('Components: Todo', () => {
 
   it('should have a <TodoInput>', () => {
     expect(wrapper.find(TodoInput)).to.have.length(1);
-    expect(wrapper.contains(<TodoInput />)).to.equal(true);
+    expect(wrapper.contains(<TodoInput addTodo={props.actions.addTodo} />)).to.equal(true);
   });
 
   it('should have a <TodoList>', () => {

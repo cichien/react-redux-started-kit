@@ -1,9 +1,22 @@
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
 
 class TodoInput extends Component {
   constructor(props) {
     super(props);
     this.getTextInput = this.getTextInput.bind(this);
+    this.onTodoSubmit = this.onTodoSubmit.bind(this);
+  }
+
+  onTodoSubmit(e) {
+    const { addTodo } = this.props;
+    e.preventDefault();
+
+    addTodo({
+      title: this.getTextInput.value,
+      done: false,
+    });
+
+    this.getTextInput.value = '';
   }
 
   getTextInput(elem) {
@@ -12,7 +25,7 @@ class TodoInput extends Component {
 
   render() {
     return (
-      <form>
+      <form onSubmit={this.onTodoSubmit}>
         <input
           type="text"
           ref={this.getTextInput}
@@ -21,5 +34,9 @@ class TodoInput extends Component {
     );
   }
 }
+
+TodoInput.propTypes = {
+  addTodo: PropTypes.func.isRequired,
+};
 
 export default TodoInput;
