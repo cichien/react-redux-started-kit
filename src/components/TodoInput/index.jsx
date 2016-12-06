@@ -12,11 +12,11 @@ class TodoInput extends Component {
     e.preventDefault();
 
     addTodo({
-      title: this.getTextInput.value,
+      title: this.textInput.value,
       done: false,
     });
 
-    this.getTextInput.value = '';
+    this.textInput.value = '';
   }
 
   getTextInput(elem) {
