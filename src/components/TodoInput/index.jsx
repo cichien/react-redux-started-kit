@@ -1,4 +1,5 @@
 import React, { Component, PropTypes } from 'react';
+import TextField from 'material-ui/TextField';
 
 class TodoInput extends Component {
   constructor(props) {
@@ -20,14 +21,14 @@ class TodoInput extends Component {
   }
 
   getTextInput(elem) {
-    this.textInput = elem;
+    this.textInput = elem.input;
   }
 
   render() {
     return (
       <form onSubmit={this.onTodoSubmit}>
-        <input
-          type="text"
+        <TextField
+          hintText="New Todo"
           ref={this.getTextInput}
         />
       </form>
