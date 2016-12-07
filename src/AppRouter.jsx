@@ -18,6 +18,7 @@ const AppRouter = ({ actions }) => (
     </Route>
   </Router>
 );
+
 AppRouter.propTypes = {
   actions: PropTypes.shape({
     fetchTodo: PropTypes.func.isRequired,
