@@ -13,15 +13,15 @@ class TodoInput extends Component {
     e.preventDefault();
 
     addTodo({
-      title: this.textInput.value,
+      title: this.textInput.input.value,
       done: false,
     });
-
-    this.textInput.value = '';
+    this.textInput.input.value = '';
+    this.textInput.setState({ hasValue: false });
   }
 
   getTextInput(elem) {
-    this.textInput = elem.input;
+    this.textInput = elem;
   }
 
   render() {
